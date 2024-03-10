@@ -1,4 +1,4 @@
-<h2>Secure-File-Cloud---SFC<h2>
+<h2>Secure-File-Cloud---SFC</h2>
 chmura do trzymania plików
 
 <h2>założenia projektu:</h2>
