@@ -2,18 +2,13 @@
 chmura do trzymania plików
 
 <h2>założenia projektu:</h2>
-<h3>1.formularz logowania<br>
-2.możliwość założenia konta<br>
-3.możliwośc zresetowania hasła<br>
-4.podwójna weryfikacja (google auth)<br>
-5.bezpieczne przechowywanie haseł i plików (szyfrowanie)<br>
-6.plik można wrzucić, pobrać, usunąć<br>
-7.można stworzyć linka przy pomocy którego każdy może pobrać plik (udostępnianie pliku w sieci)<br>
-8.przy paru złych próbach zalogowania użytkownik powinien zostań zablokowany na jakiś określony czas<br>
-9.responsywność dla urządzeń mobilnych<br>
-10.strona admina do zarządzania urzytkownikami np. ile osób korzysta z chmury, zajęte miejsce itp.<br>
-11.pliki na stronie powinny być przechowywane w postaci kwadratów z nazwą, zajmowanym miejscem itp.<br>
-12.jasny, ciemny motyw<br>
-13.dwie wersje językowe<br>
-14.statystyki u admina<br>
-15.mozliwość wyszukiwania konkretnych plików<br></h3>
+<h3>1.logowanie/rejestracja<br>
+2.odzyskiwanie hasła<br>
+3.zapewnienie bezpieczeństwa przechowywanych danych<br>
+4.dodawanie,usuwanie,pobieranie plików<br>
+5.udostępnianie plików przez linka<br>
+6.tymczasowe blokowanie dostępu do konta przy paru błędnych próbach logowania<br>
+7.zarządzanie kontami userów + statystyki z poziomu konta admina<br>
+8.motyw jasny/ciemny<br>
+9.dwie wersje językowe<br>
+10.wyszukiwarka plików<br></h3>
