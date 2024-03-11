@@ -11,9 +11,9 @@ chmura do trzymania plików
 7.można stworzyć linka przy pomocy którego każdy może pobrać plik (udostępnianie pliku w sieci)<br>
 8.przy paru złych próbach zalogowania użytkownik powinien zostań zablokowany na jakiś określony czas<br>
 9.responsywność dla urządzeń mobilnych<br>
-10.strona admina do zarządzania urzytkownikami np. ile osób korzysta z chmury, zajęte miejsce itp.
-11.pliki na stronie powinny być przechowywane w postaci kwadratów z nazwą, zajmowanym miejscem itp.
-12.jasny, ciemny motyw
-13.dwie wersje językowe
-14.statystyki u admina
-15.mozliwość wyszukiwania konkretnych plików</h3>
+10.strona admina do zarządzania urzytkownikami np. ile osób korzysta z chmury, zajęte miejsce itp.<br>
+11.pliki na stronie powinny być przechowywane w postaci kwadratów z nazwą, zajmowanym miejscem itp.<br>
+12.jasny, ciemny motyw<br>
+13.dwie wersje językowe<br>
+14.statystyki u admina<br>
+15.mozliwość wyszukiwania konkretnych plików<br></h3>
