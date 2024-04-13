@@ -58,6 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Sprawdzenie typu użytkownika i ustawienie odpowiedniej zmiennej sesji
             $_SESSION['typ_uzytkownika'] = $row['admin'] == 1 ? 'admin' : 'user';
 
+            // przypisanie emaila
+            $_SESSION['email'] = $email;
+            
             // Przekierowanie na odpowiednią stronę w zależności od typu użytkownika
             if ($_SESSION['typ_uzytkownika'] == 'admin') {
                 header("location: ../admin.php");
