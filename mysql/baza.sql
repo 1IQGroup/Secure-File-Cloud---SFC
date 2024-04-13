@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `projekt_chmura`.`pliki` (
   `plik` LONGBLOB NOT NULL,
   `kod` VARCHAR(20) NULL,
   `wlasciciel` INT NOT NULL,
+  `bajty` INT(9) NOT NULL,
   PRIMARY KEY (`id`, `wlasciciel`),
   INDEX `fk_pliki_uzytkownicy_idx` (`wlasciciel` ASC) ,
   CONSTRAINT `fk_pliki_uzytkownicy`
