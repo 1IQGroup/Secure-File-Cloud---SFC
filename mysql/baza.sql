@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `projekt_chmura`.`uzytkownicy` (
   `email` VARCHAR(64) NOT NULL,
   `haslo` VARCHAR(128) NOT NULL,
   `admin` BIT(1) NOT NULL DEFAULT 0,
+  `miejsce` INT(7) NOT NULL DEFAULT 50,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
 ENGINE = InnoDB;
