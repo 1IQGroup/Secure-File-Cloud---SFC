@@ -96,6 +96,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // mysqli_close($polaczenie);
 
         // Treść wiadomości
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
         $mail->Subject = 'odzyskiwanie hasla';
         $mail->Body = "Zmien swoje haslo tutaj:<br>
         <a href='https://www.jakubmartynski.pl/projekt/haslo.php?kod=$kod'>https://www.jakubmartynski.pl/projekt/haslo.php?kod=$kod</a><br>

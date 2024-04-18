@@ -92,6 +92,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Treść wiadomości
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
         $mail->Subject = 'rejestracja';
         $mail->Body = "Dziekujemy za rejestracje na naszej stronie!<br>
         Zeby potwierdzic swoje konto kliknij ten link:<br>
