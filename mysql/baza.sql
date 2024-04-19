@@ -41,7 +41,7 @@ DROP TABLE IF EXISTS `projekt_chmura`.`pliki` ;
 
 CREATE TABLE IF NOT EXISTS `projekt_chmura`.`pliki` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nazwa` VARCHAR(100) NOT NULL
+  `nazwa` VARCHAR(100) NOT NULL,
   `plik` LONGBLOB NOT NULL,
   `kod` VARCHAR(20) NULL,
   `wlasciciel` INT NOT NULL,

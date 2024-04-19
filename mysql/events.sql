@@ -3,9 +3,9 @@ DROP EVENT IF EXISTS delete_expired_records_event2;
 DROP EVENT IF EXISTS delete_expired_records_event3;
 
 DELIMITER //
---usuwanie zawartości z zablokowanymi ip
+
 CREATE EVENT IF NOT EXISTS delete_expired_records_event
-ON SCHEDULE EVERY 1 MINUTE -- Sprawdzanie co minutę, czy istnieją rekordy do usunięcia
+ON SCHEDULE EVERY 1 MINUTE
 DO
 BEGIN
     DECLARE done BOOLEAN DEFAULT FALSE;
@@ -31,9 +31,9 @@ BEGIN
     CLOSE cur;
     
 END//
---usuwanie zawartości z kodami do rejestracji i hasłem
+
 CREATE EVENT IF NOT EXISTS delete_expired_records_event2
-ON SCHEDULE EVERY 1 MINUTE -- Sprawdzanie co minutę, czy istnieją rekordy do usunięcia
+ON SCHEDULE EVERY 1 MINUTE
 DO
 BEGIN
     DECLARE done BOOLEAN DEFAULT FALSE;
@@ -59,9 +59,9 @@ BEGIN
     CLOSE cur;
     
 END//
---usuwanie zawartości z zablokowaną możliwością wysyłania emaila do hasła i rejestracji
+
 CREATE EVENT IF NOT EXISTS delete_expired_records_event3
-ON SCHEDULE EVERY 1 MINUTE -- Sprawdzanie co minutę, czy istnieją rekordy do usunięcia
+ON SCHEDULE EVERY 1 MINUTE 
 DO
 BEGIN
     DECLARE done BOOLEAN DEFAULT FALSE;
@@ -81,7 +81,7 @@ BEGIN
             LEAVE read_loop;
         END IF;
         
-        DELETE FROM blokada WHERE id = id_to_delete;
+        DELETE FROM blokada2 WHERE id = id_to_delete;
     END LOOP;
     
     CLOSE cur;
