@@ -16,6 +16,18 @@
     <form method="post">
         <button id="exit" type="submit" name="exit">X</button>
     </form>
+    <?php
+    // Obsługa przekierowania na inny język
+    if (isset($_POST['jezyk'])) {
+        header("location: ukr/rejestracja.php");
+        exit;
+    }
+    // Obsługa cofnięcia się
+    if (isset($_POST['exit'])) {
+        header("location: index.php");
+        exit;
+    }
+    ?>
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         // Sprawdź, czy użytkownik ma zapisany preferowany motyw
@@ -43,6 +55,14 @@
             <div class="form-group">
                 <button type="submit" class="btn-login">Zarejestruj się</button>
             </div>
+            <?php
+                if(isset($_GET['error']) && $_GET['error'] == 1) {
+                    echo "<p class='error-message'>Podany email już istnieje</p>";
+                }
+                if(isset($_GET['error']) && $_GET['error'] == 2) {
+                    echo "<p class='error-message'>Za dużo wysłanych wiadomości<br>Spróbuj ponownie za godzinę</p>";
+                }
+            ?>
         </form>
     </div>
 </body>

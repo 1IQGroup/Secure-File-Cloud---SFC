@@ -1,3 +1,30 @@
+<?php
+// Sprawdzenie, czy kod został przekazany jako parametr URL
+if(isset($_GET['kod'])) {
+    // Pobranie kodu z parametru URL
+    $kod = $_GET['kod'];
+    
+    // Połączenie z bazą danych
+    include('skrypty/baza.php');
+    $polaczenie = mysqli_connect($host, $uzytkownik_bd, $haslo_bd, $bd);
+
+    // Sprawdzenie, czy udało się połączyć z bazą danych
+    if (!$polaczenie) {
+        die("Błąd połączenia z bazą danych: " . mysqli_connect_error());
+    }
+
+    // Zabezpieczenie przed atakami SQL injection
+    $kod = mysqli_real_escape_string($polaczenie, $kod);
+
+    // Zapytanie do bazy danych w celu sprawdzenia, czy kod istnieje w tabeli rejestracja
+    $query = "SELECT * FROM rejestracja WHERE kod='$kod'";
+    $result = mysqli_query($polaczenie, $query);
+
+    // Sprawdzenie, czy kod został znaleziony w bazie danych
+    if(mysqli_num_rows($result) == 1) {
+        // Użytkownik ma poprawny kod - wyświetlenie formularza zmiany hasła
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -13,6 +40,13 @@
     <form method="post">
         <button id="language-toggle" type="submit" name="jezyk">українська</button>
     </form>
+    <?php
+    // Obsługa przekierowania na inny język
+    if (isset($_POST['jezyk'])) {
+        header("location: ukr/haslo.php?kod=$kod");
+        exit;
+    }
+    ?>
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         // Sprawdź, czy użytkownik ma zapisany preferowany motyw
@@ -86,3 +120,19 @@
     </div>
 </body>
 </html>
+
+<?php
+    } else {
+        // Kod nie został znaleziony w bazie danych - przekierowanie do strony głównej
+        header("location: index.php");
+        exit;
+    }
+
+    // Zamknięcie połączenia z bazą danych
+    mysqli_close($polaczenie);
+} else {
+    // Jeśli kod nie został przekazany jako parametr URL, przekierowanie do strony głównej
+    header("location: index.php");
+    exit;
+}
+?>

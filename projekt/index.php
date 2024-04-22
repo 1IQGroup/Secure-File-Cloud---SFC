@@ -13,6 +13,13 @@
     <form method="post">
         <button id="language-toggle" type="submit" name="jezyk">українська</button>
     </form>
+    <?php
+    // Obsługa przekierowania na inny język
+    if (isset($_POST['jezyk'])) {
+        header("location: ukr/index.php");
+        exit;
+    }
+    ?>
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         // Sprawdź, czy użytkownik ma zapisany preferowany motyw
@@ -50,6 +57,17 @@
         <div class="register-link">
             <span>Nie masz jeszcze konta? <a href="rejestracja.php">Zarejestruj się</a></span>
         </div>
+        <?php
+        if(isset($_GET['error']) && $_GET['error'] == 1) {
+            echo "<p class='error-message'>Nieprawidłowy email lub hasło</p>";
+        }
+        if(isset($_GET['error']) && $_GET['error'] == 2) {
+            echo "<p class='error-message'>Za dużo prób logowania<br>Spróbuj ponownie za 20 minut</p>";
+        }
+        if(isset($_GET['login']) && $_GET['login'] == 1) {
+            echo "<p class='good-message'>Możesz się już zalogować</p>";
+        }
+        ?>
     </div>
 </body>
 </html>
