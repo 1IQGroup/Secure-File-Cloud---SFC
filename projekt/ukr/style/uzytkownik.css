@@ -18,6 +18,16 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+#logout {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    cursor: pointer;
+}
 /* Motyw jasny */
 [data-theme="light"] {
     --background-color: #fff;
@@ -79,4 +89,7 @@ th {
 table td {
     text-align: center;
     border: 1px solid var(--border-color);; /* Dodajemy obramowanie 1px czarnym kolorem */
+}
+ul {
+    list-style-type: none;
 }
