@@ -16,6 +16,24 @@
     <form method="post">
         <button id="exit" type="submit" name="exit">X</button>
     </form>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        // Sprawdź, czy użytkownik ma zapisany preferowany motyw
+        let currentTheme = localStorage.getItem('theme');
+        if (!currentTheme) {
+            // Jeśli nie ma zapisanego motywu, ustaw domyślnie motyw jasny
+            currentTheme = 'light';
+            localStorage.setItem('theme', currentTheme);
+        }
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        // Obsługa kliknięcia przycisku zmiany motywu
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
     <div class="login-container">
         <h2>Zarejestruj się</h2>
         <form action="skrypty/rejestracja.php" method="POST"> <!-- Wskazujemy skrypt obsługujący formularz -->

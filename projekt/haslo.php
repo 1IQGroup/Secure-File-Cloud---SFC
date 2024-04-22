@@ -13,6 +13,24 @@
     <form method="post">
         <button id="language-toggle" type="submit" name="jezyk">українська</button>
     </form>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        // Sprawdź, czy użytkownik ma zapisany preferowany motyw
+        let currentTheme = localStorage.getItem('theme');
+        if (!currentTheme) {
+            // Jeśli nie ma zapisanego motywu, ustaw domyślnie motyw jasny
+            currentTheme = 'light';
+            localStorage.setItem('theme', currentTheme);
+        }
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        // Obsługa kliknięcia przycisku zmiany motywu
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
     <div class="login-container">
         <h2>Podaj hasło</h2>
         <form action="skrypty/haslo.php?kod=<?php echo $kod; ?>" method="POST"> <!-- Wskazujemy skrypt obsługujący formularz -->
@@ -23,6 +41,48 @@
                 <button type="submit" class="btn-login">Zatwierdź</button>
             </div>
         </form>
+        <script>
+            // Walidacja hasła po stronie klienta
+            document.addEventListener('DOMContentLoaded', function() {
+                // Pobranie referencji do pola hasła
+                const passwordInput = document.getElementById('haslo');
+
+                // Funkcja sprawdzająca poprawność hasła
+                function validatePassword() {
+                    const password = passwordInput.value;
+
+                    // Sprawdzenie, czy hasło zawiera minimum 8 znaków
+                    if (password.length < 8) {
+                        passwordInput.setCustomValidity('Hasło musi zawierać co najmniej 8 znaków.');
+                        return;
+                    }
+
+                    // Sprawdzenie, czy hasło zawiera co najmniej jedną dużą literę
+                    if (!/[A-Z]/.test(password)) {
+                        passwordInput.setCustomValidity('Hasło musi zawierać co najmniej jedną dużą literę.');
+                        return;
+                    }
+
+                    // Sprawdzenie, czy hasło zawiera co najmniej jedną cyfrę
+                    if (!/\d/.test(password)) {
+                        passwordInput.setCustomValidity('Hasło musi zawierać co najmniej jedną cyfrę.');
+                        return;
+                    }
+
+                    // Sprawdzenie, czy hasło zawiera co najmniej jeden znak specjalny
+                    if (!/[@$!%*?&]/.test(password)) {
+                        passwordInput.setCustomValidity('Hasło musi zawierać co najmniej jeden znak specjalny.');
+                        return;
+                    }
+
+                    // Hasło spełnia wszystkie kryteria - brak komunikatu o błędzie
+                    passwordInput.setCustomValidity('');
+                }
+
+                // Nasłuchiwanie na zmiany w polu hasła i wywołanie funkcji walidacji
+                passwordInput.addEventListener('input', validatePassword);
+            });
+        </script>
     </div>
 </body>
 </html>
