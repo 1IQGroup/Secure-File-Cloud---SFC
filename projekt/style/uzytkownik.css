@@ -28,6 +28,24 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+.button {
+    z-index: 9999;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#fileInput {
+    display: none; /* ukryj domyślny przycisk */
+}
+#fileInputLabel {
+    z-index: 9999;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: black;
+}
 /* Motyw jasny */
 [data-theme="light"] {
     --background-color: #fff;
