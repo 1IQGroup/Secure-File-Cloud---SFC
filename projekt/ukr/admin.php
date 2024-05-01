@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="lewy">
+        <?php echo $_SESSION['email'] ?>
         <h1>Ласкаво просимо на сайт адміністратора</h1>
         <!-- Przycisk wylogowania -->
         <form method="post">
@@ -29,5 +30,23 @@
             </tr>
         <table>
     </div>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        // Sprawdź, czy użytkownik ma zapisany preferowany motyw
+        let currentTheme = localStorage.getItem('theme');
+        if (!currentTheme) {
+            // Jeśli nie ma zapisanego motywu, ustaw domyślnie motyw jasny
+            currentTheme = 'light';
+            localStorage.setItem('theme', currentTheme);
+        }
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        // Obsługa kliknięcia przycisku zmiany motywu
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
 </body>
 </html>
