@@ -1,3 +1,7 @@
+<!--
+    usun_plik.php
+    skrypt odpowiedzialny za usuwanie plików
+-->
 <?php
 session_start();
 

@@ -48,7 +48,7 @@
 }
 /* Motyw jasny */
 [data-theme="light"] {
-    --background-color: #fff;
+    --background-color: #f4f4f4;
     --text-color: #000;
     --border-color: #000;
 }

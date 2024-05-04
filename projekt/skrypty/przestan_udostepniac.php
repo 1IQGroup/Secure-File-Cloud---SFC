@@ -1,3 +1,7 @@
+<!--
+    przestan_udostepniac.php
+    skrypt odpowiedzialny za zaprzestanie udostępniania pliku
+-->
 <?php
 session_start();
 require_once('baza.php');

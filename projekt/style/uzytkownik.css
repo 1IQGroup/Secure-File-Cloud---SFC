@@ -1,3 +1,4 @@
+/* wygląd przycisku od zmiany języka */
 #language-toggle {
     position: fixed;
     top: 60px; /* Zmieniona wartość top, aby przycisk był umieszczony poniżej */
@@ -8,6 +9,7 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+/* wygląd przycisku od zmiany wyglądu */
 #theme-toggle {
     position: fixed;
     top: 20px;
@@ -18,6 +20,7 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+/* wygląd przycisku do wylogowania */
 #logout {
     position: fixed;
     bottom: 20px;
@@ -28,6 +31,7 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+/* wygląd przycisku */
 .button {
     z-index: 9999;
     background-color: #fff;
@@ -35,9 +39,11 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+/* ukrycie defaultowego przycisku "dodaj plik" */
 #fileInput {
     display: none; /* ukryj domyślny przycisk */
 }
+/* przycisk własny */
 #fileInputLabel {
     z-index: 9999;
     background-color: #fff;
@@ -48,7 +54,7 @@
 }
 /* Motyw jasny */
 [data-theme="light"] {
-    --background-color: #fff;
+    --background-color: #f4f4f4;
     --text-color: #000;
     --border-color: #000;
 }
@@ -58,12 +64,12 @@
     --text-color: #fff;
     --border-color: #fff;
 }
-
+/* wygląd body */
 body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
-
+/* lewa część strony */
 .lewy {
     position: fixed;
     top: 0;
@@ -74,22 +80,23 @@ body {
     padding: 20px;
     box-sizing: border-box;
 }
-
+/* prawa część strony */
 .prawy {
     margin-left: 30%; /* Ustawienie marginesu, aby uniknąć zasłaniania przez lewy div */
     padding: 20px;
     box-sizing: border-box;
 }
-
-/* Wyczyszczenie floatów */
+/* Wyczyszczenie floatów bo bez tego strona źle wygląda*/
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
 }
+/* wygląd errorów */
 .error-message {
     color: red;
 }
+/* wgląd dobrych wiadomości */
 .good-message {
     color: rgb(0, 255, 0);
 }
@@ -108,6 +115,7 @@ table td {
     text-align: center;
     border: 1px solid var(--border-color);; /* Dodajemy obramowanie 1px czarnym kolorem */
 }
+/* styl dla ul */
 ul {
     list-style-type: none;
 }

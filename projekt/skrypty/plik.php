@@ -1,3 +1,7 @@
+<!--
+    plik.php
+    skrypt odpowiedzialny za pobieranie udostępnionych plików
+-->
 <?php
 require_once('baza.php');
 

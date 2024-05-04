@@ -1,3 +1,7 @@
+<!--
+    zmien_miejsce.php
+    skrypt odpowiedzialny za zmianę miejsca które przysługuje użytkownikowi
+-->
 <?php
 // Połączenie z bazą danych
 require_once('baza.php');

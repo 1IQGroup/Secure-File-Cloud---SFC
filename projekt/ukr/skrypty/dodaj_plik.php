@@ -10,6 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["file"]) && isset($_SE
     $file_temp = $_FILES["file"]["tmp_name"];
     $file_size = $_FILES["file"]["size"];
     $user_email = $_SESSION['email'];
+    if($file_name == NULL){
+        header("Location: ../user.php");
+    }
     // Połączenie z bazą danych
     $conn = new mysqli($host, $uzytkownik_bd, $haslo_bd, $bd);
     // Sprawdzanie połączenia

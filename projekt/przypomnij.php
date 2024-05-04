@@ -1,3 +1,7 @@
+<!-- 
+    strona przypomnij.php
+    strona gdzie użytkownik ma możliwość zresetowania swojego hasła 
+ -->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -7,12 +11,13 @@
     <link rel="stylesheet" href="style/logowanie.css">
 </head>
 <body>
-    <!-- motyw -->
+    <!-- guzik od zmiany motywu z jasnego na ciemny i vicewersa-->
     <button id="theme-toggle">Zmień motyw</button>
-    <!-- język -->
+    <!-- guzik od zmiany języka z polskiego na ukraiński -->
     <form method="post">
         <button id="language-toggle" type="submit" name="jezyk">українська</button>
     </form>
+    <!-- guzik X który cofa do index.php -->
     <form method="post">
         <button id="exit" type="submit" name="exit">X</button>
     </form>
@@ -29,6 +34,7 @@
     }
     ?>
     <script>
+        // zmiana motywu
         const themeToggle = document.getElementById('theme-toggle');
         // Sprawdź, czy użytkownik ma zapisany preferowany motyw
         let currentTheme = localStorage.getItem('theme');
@@ -46,19 +52,26 @@
             localStorage.setItem('theme', newTheme);
         });
     </script>
+    <!-- formularz zmiany hasła -->
     <div class="login-container">
         <h2>Nie pamiętam hasła</h2>
+        <!-- przypomnij.php -->
         <form action="skrypty/przypomnij.php" method="POST">
+            <!-- email -->
             <div class="form-group">
                 <input type="email" name="email" placeholder="Adres email" required>
             </div>
+            <!-- przycisk który aktywuje resetowanie hasła -->
             <div class="form-group">
                 <button type="submit" class="btn-login">Zresetuj hasło</button>
             </div>
             <?php
+                // obsługa błędów
+                // jeżeli email nie istnieje
                 if(isset($_GET['error']) && $_GET['error'] == 1) {
                     echo "<p class='error-message'>Podany email nie istnieje</p>";
                 }
+                // jeżeli już wysłano wiadomość w ciągu jednej godziny
                 if(isset($_GET['error']) && $_GET['error'] == 2) {
                     echo "<p class='error-message'>Za dużo wysłanych wiadomości<br>Spróbuj ponownie za godzinę</p>";
                 }

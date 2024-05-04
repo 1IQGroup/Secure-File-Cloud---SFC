@@ -1,3 +1,7 @@
+<!--
+    login.php
+    skrypt odpowiedzialny za logowanie na stronie
+-->
 <?php
 session_start();
 

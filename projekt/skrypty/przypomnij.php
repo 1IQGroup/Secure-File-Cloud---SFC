@@ -1,3 +1,7 @@
+<!--
+    przypomnij.php
+    skrypt odpowiedzialny za wysłanie emaila do użytkownika jeżeli ten zapomniał hasła
+-->
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -100,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Encoding = 'base64';
         $mail->Subject = 'odzyskiwanie hasla';
         $mail->Body = "Zmien swoje haslo tutaj:<br>
-        <a href='https://www.jakubmartynski.pl/projekt/haslo.php?kod=$kod'>https://www.jakubmartynski.pl/projekt/haslo.php?kod=$kod</a><br>
+        <a href='$moja_strona"."haslo.php?kod=$kod'>$moja_strona"."haslo.php?kod=$kod</a><br>
         Link wazny przez godzine.";
 
         // Wysłanie wiadomości

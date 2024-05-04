@@ -1,3 +1,7 @@
+<!--
+    udostepnij_plik.php
+    skrypt odpowiedzialny za udostepnianie plików
+-->
 <?php
 session_start();
 require_once('baza.php');

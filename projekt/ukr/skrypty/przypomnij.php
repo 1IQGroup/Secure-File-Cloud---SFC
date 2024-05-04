@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Encoding = 'base64';
         $mail->Subject = 'Відновлення паролю';
         $mail->Body = "Змініть свій пароль тут:<br>
-        <a href='https://www.jakubmartynski.pl/projekt/ukr/haslo.php?kod=$kod'>https://www.jakubmartynski.pl/projekt/ukr/haslo.php?kod=$kod</a><br>
+        <a href='$moja_strona"."ukr/haslo.php?kod=$kod'>$moja_strona"."ukr/haslo.php?kod=$kod</a><br>
         Посилання дійсне протягом години.";
 
         // Wysłanie wiadomości

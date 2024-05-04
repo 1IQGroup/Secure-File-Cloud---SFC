@@ -1,15 +1,20 @@
+<!--
+    dodaj_plik.php
+    skrypt odpowiedzialny za dodanie pliku do bazy danych
+-->
 <?php
 session_start();
 require_once('baza.php');
-
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
-
+// sprawdzenie czy dane zostały wprowadzone prawidłowo
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["file"]) && isset($_SESSION['email'])) {
     $file_name = $_FILES["file"]["name"];
     $file_temp = $_FILES["file"]["tmp_name"];
     $file_size = $_FILES["file"]["size"];
     $user_email = $_SESSION['email'];
+    // sprawdzenie czy użytkownik wrzucił jakikolwiek plik
+    if($file_name == NULL){
+        header("Location: ../user.php");
+    }
     // Połączenie z bazą danych
     $conn = new mysqli($host, $uzytkownik_bd, $haslo_bd, $bd);
     // Sprawdzanie połączenia
@@ -42,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["file"]) && isset($_SE
     $miejsce_uzytkownika = $result->fetch_assoc()['miejsce']; // Pobranie miejsca użytkownika
     $stmt->close();
 
-    // Sprawdź czy plik został poprawnie przesłany
+    // Sprawdź czy nie został przekroczony limit miejsca
     if (round($file_size / (1024 * 1024), 2)+$zajete_miejsce_MB < $miejsce_uzytkownika) {
         $file_content = file_get_contents($file_temp);
 

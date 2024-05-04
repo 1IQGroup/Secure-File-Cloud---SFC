@@ -1,3 +1,7 @@
+<!--
+    rejestracja.php
+    skrypt odpowiedzialny za wysłanie emaila do użytkownika jeżeli ten chce się zarejestrować
+-->
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -97,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Subject = 'rejestracja';
         $mail->Body = "Dziekujemy za rejestracje na naszej stronie!<br>
         Zeby potwierdzic swoje konto kliknij ten link:<br>
-        <a href='https://www.jakubmartynski.pl/projekt/haslo.php?kod=$kod'>https://www.jakubmartynski.pl/projekt/haslo.php?kod=$kod</a><br>
+        <a href='$moja_strona"."haslo.php?kod=$kod'>$moja_strona"."haslo.php?kod=$kod</a><br>
         Link wazny przez godzine.";
 
         // Wysłanie wiadomości

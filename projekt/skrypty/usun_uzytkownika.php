@@ -1,3 +1,7 @@
+<!--
+    usun_uzytkownika.php
+    skrypt odpowiedzialny za usuwanie użytkowników
+-->
 <?php
 // Połączenie z bazą danych
 require_once('baza.php');

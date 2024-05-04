@@ -1,3 +1,7 @@
+<!--
+    haslo.php
+    skrypt odpowiedzialny za ustawienie hasła
+-->
 <?php
 // Sprawdzenie, czy dane zostały przesłane z formularza
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['kod'])) {

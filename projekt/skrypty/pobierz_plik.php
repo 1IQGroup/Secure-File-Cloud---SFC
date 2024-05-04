@@ -1,3 +1,7 @@
+<!--
+    pobierz_plik.php
+    skrypt odpowiedzialny za pobieranie plików
+-->
 <?php
 session_start();
 
@@ -15,9 +19,9 @@ if (!isset($_SESSION['typ_uzytkownika']) || $_SESSION['typ_uzytkownika'] !== 'us
     exit;
 }
 
-// Sprawdzenie czy żądanie jest typu POST i czy zawiera ID pliku do usunięcia
+// Sprawdzenie czy żądanie jest typu POST i czy zawiera ID pliku
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['plik_id'])) {
-    // Pobranie ID pliku do usunięcia
+    // Pobranie ID pliku
     $file_id = $_POST['plik_id'];
     
     // Połączenie z bazą danych

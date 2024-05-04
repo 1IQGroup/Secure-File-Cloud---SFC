@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Subject = 'реєстрація';
         $mail->Body = "Дякуємо за реєстрацію на нашому сайті!<br>
         Щоб підтвердити свій обліковий запис, натисніть це посилання:<br>
-        <a href='https://www.jakubmartynski.pl/projekt/ukr/haslo.php?kod=$kod'>https://www.jakubmartynski.pl/projekt/ukr/haslo.php?kod=$kod</a><br>
+        <a href='$moja_strona"."ukr/haslo.php?kod=$kod'>$moja_strona"."ukr/haslo.php?kod=$kod</a><br>
         Посилання дійсне протягом години.";
 
         // Wysłanie wiadomości

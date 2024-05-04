@@ -1,3 +1,8 @@
+<!-- 
+    strona haslo.php
+    strona gdzie użytkownik ma możliwość ustawienia hasła jeżeli go zapomniał lub jeżeli dopiero się zarejestrował
+    może się na nią dostac tylko z linka który przychodzi do użytkownika poprzez wiadomość email
+ -->
 <?php
 // Sprawdzenie, czy kod został przekazany jako parametr URL
 if(isset($_GET['kod'])) {
@@ -34,9 +39,9 @@ if(isset($_GET['kod'])) {
     <link rel="stylesheet" href="style/logowanie.css">
 </head>
 <body>
-    <!-- motyw -->
+    <!-- guzik od zmiany motywu z jasnego na ciemny i vicewersa-->
     <button id="theme-toggle">Zmień motyw</button>
-    <!-- język -->
+    <!-- guzik od zmiany języka z polskiego na ukraiński -->
     <form method="post">
         <button id="language-toggle" type="submit" name="jezyk">українська</button>
     </form>
@@ -65,12 +70,16 @@ if(isset($_GET['kod'])) {
             localStorage.setItem('theme', newTheme);
         });
     </script>
+    <!-- formularz ustawienia hasła -->
     <div class="login-container">
         <h2>Podaj hasło</h2>
+        <!-- haslo.php -->
         <form action="skrypty/haslo.php?kod=<?php echo $kod; ?>" method="POST"> <!-- Wskazujemy skrypt obsługujący formularz -->
+            <!-- hasło -->
             <div class="form-group">
                 <input type="password" name="haslo" id="haslo" placeholder="hasło" required>
             </div>
+            <!-- przycisk który aktywuje ustawienie hasła -->
             <div class="form-group">
                 <button type="submit" class="btn-login">Zatwierdź</button>
             </div>
