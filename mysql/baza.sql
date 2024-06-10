@@ -95,6 +95,8 @@ CREATE TABLE IF NOT EXISTS `projekt_chmura`.`blokada2` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+-- defaultowe konto admina
+INSERT INTO uzytkownicy (email, haslo, admin) VALUES ('admin', SHA2('admin', 256),1);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
