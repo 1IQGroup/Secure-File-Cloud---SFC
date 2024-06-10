@@ -59,13 +59,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp-relay.brevo.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'j.martynski2002@gmail.com'; // Twój adres e-mail
-        $mail->Password = 'XgH207kqGEKS8Cah'; // Twoje hasło do konta
+        $mail->Username = '766534001@smtp-brevo.com'; // Twój adres e-mail
+        $mail->Password = 'HUDjbJ1O3YPVxfQy'; // Twoje hasło do konta
         $mail->SMTPSecure = 'auto';
         $mail->Port = 587;
 
         // Konfiguracja nadawcy i odbiorcy
-        $mail->setFrom('j.martynski2002@gmail.com', 'noreply@1iqteam.pl'); // Twój adres e-mail jako nadawca
+        $mail->setFrom('martynskita@gmail.com', 'noreply@1iqteam.pl'); // Twój adres e-mail jako nadawca
         $mail->addAddress($email); // Adres e-mail odbiorcy
 
         // Treść wiadomości
