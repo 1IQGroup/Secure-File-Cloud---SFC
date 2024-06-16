@@ -1,0 +1,15 @@
+https://github.com/1IQGroup/Secure-File-Cloud---SFC
+
+defaultowe konto admina: admin@admin.pl
+hasło do admina: admin
+użytkownika trzeba stworzyć samemu. rejestracja działa.
+
+Cały projekt znajduje się na stronie: https://www.jakubmartynski.pl/projekt/
+więc w celu szybkiego sprawdzenia projektu nie trzeba samemu go stawiać.
+
+Wykres na githubie contributors jest trochę zakłamany bo pokazuje że scrummaster ma znacząco więcej linijek wstawionych niż inni oraz więcej commitsów.
+Wynika to z tego że scrummaster zajmował się też skryptami na stronie i na githuba wrzucił moduły takie jak phpmailer czy selenium. bez nich linijek byłoby na spokojnie ponad 90% mniej.
+Scrummaster na wykresie ma też dłuższy zakres wrzucania rzeczy. To wynika z tego że scrummaster zajmował się samym zakładaniem projektu na githubie a samo robienie projektu nastąpiło znacznie później.
+Commitów też jest więcej bo inni członkowie mieli wrzucać wprowadzone zmiany dopiero kiedy większość rzeczy już mieli zrobionych podczas gdy scrummaster na bierząco wprowadzał drobne poprawki od razu na githuba.
+Github służył nam bardziej jako przechowywanie już działającego projektu. Większość rzeczy i prac była wykonywana razem na discordzie.
+https://github.com/1IQGroup/Secure-File-Cloud---SFC/graphs/contributors

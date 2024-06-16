@@ -1,0 +1,8 @@
+Użytkownik:
+Znajdując się na stronie głównej należy założyć konto. Robi się to poprzez wejście w link zarejestruj się gdzie następnie podaje się swojego emaila na którego przyjdzie link aktywacyjny. Po kliknięciu w link nastąpi przekierowanie na stronę gdzie należy podać nowe hasło do konta. Po tym kroku wystarczy się zalogować i konto jest gotowe.
+
+Firma:
+Należy pobrać kod źródłowy (2 foldery: projekt i mysql).
+Zawartość mysql należy zaimportować do bazy danych MySQL (baza.sql, uzytkownik.sql i events.sql)
+Folder projekt należy wrzucić do folderu ze skonfigurowaną stroną Apache.
+Zależnie od nazwy domeny należy skonfigurować ją w skryptach baza.php i baza.php wersja ukr.

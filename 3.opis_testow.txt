@@ -1,0 +1,18 @@
+Testy wykonane z pomocą selenium.
+Kod znajduje się w folderze testy.
+Testy wykonane na założeniach:
+1.logowanie/rejestracja - przetestowane przy pomocy selenium
+2.odzyskiwanie hasła - ręcznie
+3.zapewnienie bezpieczeństwa przechowywanych danych - ręcznie
+4.dodawanie,usuwanie,pobieranie plików - przetestowane przy pomocy selenium
+5.udostępnianie plików przez linka - ręcznie
+6.tymczasowe blokowanie dostępu do konta przy paru błędnych próbach logowania - przetestowane przy pomocy selenium
+7.zarządzanie kontami userów + statystyki z poziomu konta admina - tutaj ręcznie ale ze względów bezpieczeństwa (od strony admina można niechcący pousuwać rzeczy zawarte na stronie)
+8.motyw jasny/ciemny - ręcznie
+9.dwie wersje językowe - przetestowane przy pomocy selenium
+10.wyszukiwarka plików - przetestowane przy pomocy selenium
+
+przetestowane przy pomocy selenium: 5
+ręcznie: 5
+Test jest odpalany i wykonuje się bez ingerencji użytkownika.
+Na samym końcu pokazane jest co udało się zrobic a co nie.
